@@ -1,0 +1,102 @@
+:root {
+  --blue-dark: #1f4e79; --blue: #2e75b6; --blue-light: #eaf2fb;
+  --text: #1c2733; --muted: #6b7785; --border: #d9e0e8; --bg: #f4f7fb;
+  --ok: #1e7e4a; --err: #b3261e;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: 'Segoe UI', system-ui, Arial, sans-serif; color: var(--text); background: var(--bg); }
+h1 { margin: 0 0 .4rem; font-size: 1.6rem; color: var(--blue-dark); }
+h3 { margin: 0 0 .8rem; color: var(--blue-dark); }
+.muted { color: var(--muted); }
+
+/* Marque */
+.brand { font-weight: 800; font-size: 1.4rem; color: #fff; letter-spacing: .5px; }
+.brand span { color: #9fd0ff; }
+.brand-lg { color: var(--blue-dark); font-size: 2.2rem; text-align: center; }
+.brand-lg span { color: var(--blue); }
+
+/* Formulaires */
+label { display: block; margin: .8rem 0 .25rem; font-size: .85rem; font-weight: 600; color: #3b4857; }
+input, select { width: 100%; padding: .6rem .7rem; border: 1px solid var(--border); border-radius: 8px; font-size: .95rem; background: #fff; }
+input:focus, select:focus { outline: 2px solid var(--blue); border-color: var(--blue); }
+input:disabled { background: #eef1f5; color: var(--muted); }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
+.pwd-row { display: flex; gap: .5rem; }
+.pwd-row input { flex: 1; }
+
+/* Boutons */
+.btn { border: 0; border-radius: 8px; padding: .6rem 1rem; font-size: .9rem; font-weight: 600; cursor: pointer; background: var(--blue-light); color: var(--blue-dark); }
+.btn:hover:not(:disabled) { filter: brightness(.95); }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+.btn-primary { background: var(--blue); color: #fff; margin-top: 1.1rem; }
+.btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text); }
+.topbar .btn-outline { border-color: rgba(255,255,255,.5); color: #fff; }
+.btn-ghost { background: transparent; color: var(--blue); padding: .4rem .6rem; }
+.btn-block { width: 100%; }
+.btn-small { padding: .35rem .7rem; font-size: .8rem; margin-left: .3rem; margin-top: 0; }
+.page-head .btn-primary, .modal-actions .btn { margin-top: 0; }
+
+/* Alertes */
+.alert { padding: .65rem .9rem; border-radius: 8px; font-size: .9rem; margin: .6rem 0; }
+.alert-error { background: #fde9e7; color: var(--err); border: 1px solid #f5c2bd; }
+.alert-ok { background: #e6f5ec; color: var(--ok); border: 1px solid #b9e0c9; }
+
+/* Connexion */
+.login-page { min-height: 100vh; display: grid; place-items: center; padding: 1rem;
+  background: linear-gradient(135deg, var(--blue-dark), var(--blue)); }
+.login-card { width: 100%; max-width: 420px; background: #fff; border-radius: 16px; padding: 2rem 2rem 1.5rem; box-shadow: 0 20px 50px rgba(0,0,0,.25); }
+.subtitle { text-align: center; color: var(--muted); font-size: .85rem; margin: .2rem 0 1.2rem; }
+.hint { text-align: center; font-size: .8rem; color: var(--muted); margin: 1rem 0 0; }
+
+/* Layout */
+.topbar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .7rem 1.4rem; background: var(--blue-dark); color: #fff; }
+.topbar-right { display: flex; align-items: center; gap: 1rem; }
+.who { display: flex; align-items: center; gap: .6rem; font-size: .9rem; }
+.body { display: flex; min-height: calc(100vh - 56px); }
+.sidebar { width: 210px; background: #fff; border-right: 1px solid var(--border); padding: 1rem .7rem; display: flex; flex-direction: column; gap: .3rem; }
+.sidebar a { padding: .65rem .9rem; border-radius: 8px; color: var(--text); text-decoration: none; font-weight: 600; font-size: .92rem; }
+.sidebar a:hover { background: var(--blue-light); }
+.sidebar a.active { background: var(--blue); color: #fff; }
+.content { flex: 1; padding: 1.6rem; min-width: 0; }
+@media (max-width: 760px) {
+  .body { flex-direction: column; }
+  .sidebar { width: 100%; flex-direction: row; overflow-x: auto; border-right: 0; border-bottom: 1px solid var(--border); }
+  .who strong { display: none; }
+  .row { grid-template-columns: 1fr; }
+}
+
+/* Cartes et grilles */
+.card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem; }
+.card.narrow { max-width: 480px; margin: 2rem auto; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; margin-top: 1.2rem; }
+.grid.two { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.module p { color: var(--muted); font-size: .9rem; margin: 0 0 .8rem; }
+.tag { display: inline-block; background: var(--blue-light); color: var(--blue-dark); border-radius: 999px; padding: .15rem .7rem; font-size: .75rem; font-weight: 600; }
+
+/* Badges */
+.badge { display: inline-block; padding: .15rem .6rem; border-radius: 999px; font-size: .72rem; font-weight: 700; }
+.badge-ADMINISTRATEUR { background: #ffe9c7; color: #8a5200; }
+.badge-TECHNICIEN { background: #d9f1e4; color: #1e6b43; }
+.badge-DECLARANT { background: #e2e8ff; color: #2c3e96; }
+
+/* Tableau */
+.page-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: .6rem; }
+.toolbar { display: flex; align-items: center; gap: .6rem; margin: .6rem 0 1rem; }
+.toolbar label { margin: 0; }
+.toolbar select { width: auto; }
+.table-wrap { padding: 0; overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+th, td { padding: .75rem 1rem; text-align: left; border-bottom: 1px solid var(--border); white-space: nowrap; }
+th { background: #f0f4f9; color: #3b4857; font-size: .8rem; text-transform: uppercase; letter-spacing: .4px; }
+tr.row-off td { color: var(--muted); background: #fafbfc; }
+td.actions { text-align: right; }
+
+/* Fenêtre modale */
+.modal-backdrop { position: fixed; inset: 0; background: rgba(15,30,50,.5); display: grid; place-items: center; padding: 1rem; z-index: 10; }
+.modal { width: 100%; max-width: 520px; max-height: 92vh; overflow-y: auto; }
+.modal-actions { display: flex; justify-content: flex-end; gap: .6rem; margin-top: 1.2rem; }
+
+/* Chargement */
+.center-screen { min-height: 100vh; display: grid; place-items: center; }
+.spinner { width: 38px; height: 38px; border: 4px solid var(--border); border-top-color: var(--blue); border-radius: 50%; animation: spin 0.8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
