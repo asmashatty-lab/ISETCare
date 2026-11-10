@@ -1,0 +1,23 @@
+server:
+  error:
+    include-message: always
+  port: 8081
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/isetcare
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:postgcare}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate.format_sql: true
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:changez-ce-secret-par-une-longue-valeur-aleatoire-32-caracteres-min}
+    expiration-hours: 8
+  cors:
+    allowed-origins: http://localhost:5173,http://localhost:3000
